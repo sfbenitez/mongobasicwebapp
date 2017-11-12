@@ -15,11 +15,10 @@ def consulta():
   db = mongoClient.ADB
   coleccion = db.restaurants
   cursor = coleccion.find()
-
-  return template('consula.tpl', cursor = cursor)
+  return template('consula.tpl', cursor = cursor)
 
 @route('/static/<filepath:path>')
 def server_static(filepath):
-    return static_file(filepath, root='static')
+  return static_file(filepath, root='static')
 
 run(host = '0.0.0.0', port = 8080)
