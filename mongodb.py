@@ -12,9 +12,8 @@ def consulta():
   password = request.forms.get('password')
 
   client = MongoClient('mongodb://'+str(username)+':'+str(password)+'@172.22.200.111:27017/ABD', 27017)
-  db = mongoClient.ADB
-  coleccion = db.restaurants
-  cursor = coleccion.find()
+  db = MongoClient.restaurants
+  cursor = db.find()
   return template('consula.tpl', cursor = cursor)
 
 @route('/static/<filepath:path>')
