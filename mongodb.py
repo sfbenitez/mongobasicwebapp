@@ -4,7 +4,7 @@ from bottle import Bottle,route,run,request,template,static_file,redirect,get,po
 def connect():
     return template('index.tpl')
 @post('/consulta')
-def select():
+def consulta():
     username = request.forms.get('username')
     password = request.forms.get('password')
 try:
