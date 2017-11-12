@@ -1,7 +1,8 @@
 %include('header.tpl')
 
-  %for elem in cursor:
-    <p> {{elem}} </p>
-  %end
+<h1>Consulta sobre: {{coleccion}}</h1>
+%for elem in cursor:
+ <p> {{elem}} </p>
+%end
 
 %include('footer.tpl')
