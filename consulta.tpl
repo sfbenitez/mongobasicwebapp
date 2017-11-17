@@ -1,7 +1,9 @@
-%include('header.tpl')
 
-<h1>Consulta sobre: </h1>
-for con in cursor:
-    print con['name']
+<h1>Consulta sobre: {{nombre}} </h1>
 
-%include('footer.tpl')
+% for elem in datos:
+   <p>Barrio / Calle:  {{elem['borough']}}, Nº: {{elem['address']['building']}}</p>
+   #<p> {{elem['grades']['score]]}} </p>
+   <p>Tipo de cocina:  {{elem['cuisine']}} </p>
+% end
+

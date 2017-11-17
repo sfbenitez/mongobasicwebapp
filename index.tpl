@@ -1,10 +1,12 @@
-%include('header.tpl')
-<h3>Introduzca sus datos y elija la tabla a consultar.</h3>
+	<h2>Bienvenido, {{user}}</h2>
+	<h3>Nº Total de restaurantes: {{count}}</h3>
+	<h3>Se Mostrarán sólo los 50 primeros</h3>
 	<form action="consulta" method="post">
-		<label> Usuario: </label>
-		<input type="text" name="username" required/>
-		<label> Contrasea: </label>
-                <input type="password" name="password" required/>
+                <label> Selecciona el restaurante: </label>
+		<select name="nombre">
+		% for linea in selector:
+		  <option>{{linea['name']}}</option>
+                % end
+		</select>
 		<input type="submit" value="Go">
 	</form>
-%include('footer.tpl')

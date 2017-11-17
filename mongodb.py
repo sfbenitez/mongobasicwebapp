@@ -3,21 +3,41 @@ from pymongo import MongoClient
 from bottle import Bottle,route,run,request,template,static_file,redirect,get,post,default_app,response,get,post
 
 @route('/')
-def connect():
-    return template('index.tpl')
+def index():
+  return template("conexion.tpl")
 
-@post('/consulta')
-def consulta():
-  username = request.forms.get('username')
+@route('/login',method='POST')
+def login():
+  user = request.forms.get('user')
   password = request.forms.get('password')
+  database = request.forms.get('database')
+  server = request.forms.get('server')
+#  user = 'sergio'
+#  password = 'usuario'
+#  database = 'ABD'
+#  server = '172.22.200.111'
+  client = MongoClient('mongodb://'+str(user)+':'+str(password)+'@'+str(server)+':27017/'+str(database)+'', 27017)
+  base = client.ABD.restaurants
+  selector = base.find({},{'name':1}).limit(50)
+  count = base.count()
+  return template('index.tpl', selector = selector, user = user, count = count)
 
-  client = MongoClient('mongodb://'+str(username)+':'+str(password)+'@172.22.200.111:27017/ABD', 27017)
-  db = MongoClient.restaurants
-  cursor = db.find()
-  return template('consula.tpl', cursor = cursor)
+@post('/consulta',method='POST')
+def consulta():
+  user = request.forms.get('user')
+  password = request.forms.get('password')
+  nombre = request.forms.get('nombre')
+#  user = 'sergio'
+#  password = 'usuario'
+#  database = 'ABD'
+#  server = '172.22.200.111'
+  client = MongoClient('mongodb://'+str(user)+':'+str(password)+'@'+str(server)+':27017/'+str(database)+'', 27017)
+  base = client.ABD.restaurants
+  datos = base.find({'name':nombre})
+  return template('consulta.tpl', datos = datos, nombre = nombre)
 
-@route('/static/<filepath:path>')
-def server_static(filepath):
-  return static_file(filepath, root='static')
+@route('/css/<filename:path>')
+def send_static(filename):
+    return static_file(filename, root='/css/')
 
 run(host = '0.0.0.0', port = 8080)

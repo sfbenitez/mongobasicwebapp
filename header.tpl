@@ -1,3 +1,37 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Flat Decor an Interior and Furniture Category Bootstrap Responsive website Template | Home :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Flat Decor Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+        SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+<link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />  <!-- flexslider-CSS -->
+<link href="css/font-awesome.css" rel="stylesheet">             <!-- font-awesome icons -->
+<link rel="stylesheet" href="css/owl.carousel.css" type="text/css" media="all"/> <!-- Owl-Carousel-CSS -->
+<link href='css/simplelightbox.css' rel='stylesheet' type='text/css'>
+<!-- //Custom Theme files -->
+<!-- js -->
+<script src="js/jquery-2.2.3.min.js"></script>
+<!-- //js -->
+<!-- web-fonts -->
+<link href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz:200,300,400,700" rel="stylesheet">
+<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<!-- //web-fonts -->
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+        <!-- banner -->
+        <div id="home" class="w3ls-banner">
                 <!-- header -->
                 <div class="header-w3layouts">
                         <!-- Navigation -->
@@ -31,3 +65,43 @@
                         </nav>
                 </div>
                 <!-- //header -->
+                <!-- banner-text -->
+                <div class="banner-text">
+                        <div class="flexslider">
+                                <ul class="slides">
+                                        <li>
+                                                <h2>SAPIENTE DELECTUS AMAZING</h2>
+                                                <h5>Tenetur a sapiente</h5>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipi est Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias phasellus mattis tellus.</p>
+                                        </li>
+                                        <li>
+                                                <h3>LOREM IPSUM DOLOR SIT AMET</h3>
+                                                <h5>Tenetur a sapiente</h5>
+                                                <p>Consectetur adipi est Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias phasellus mattis tellus. Lorem ipsum dolor sit amet.</p>
+                                        </li>
+                                        <li>
+                                                <h3>ITAQUE EARUM RERUM TENETUR</h3>
+                                                <h5>Tenetur a sapiente</h5>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipi est Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias phasellus mattis tellus.</p>
+                                        </li>
+                                </ul>
+                        </div>
+                        <!-- FlexSlider -->
+                        <script defer src="js/jquery.flexslider.js"></script>
+                        <script type="text/javascript">
+                                $(window).load(function() {
+                                  $('.flexslider').flexslider({
+                                        animation: "slide",
+                                        controlsContainer: $(".custom-controls-container"),
+                                        customDirectionNav: $(".custom-navigation a")
+                                  });
+                                });
+                        </script>
+                        <!-- //FlexSlider -->
+                </div>
+                <!-- //banner-text -->
+        </div>
+        <!-- //banner -->
+        <div id="gallery" class="gallery">
+                <div class="container">
+
