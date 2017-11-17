@@ -15,7 +15,7 @@
       <div id="logo">
         <div id="logo_text">
           <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1>Mongo DB APP!<span class="logo_colour">blue</span></h1>
+          <h1>Mongo DB APP!</h1>
           <h2>Simple. Contemporary. App.</h2>
         </div>
       </div>
