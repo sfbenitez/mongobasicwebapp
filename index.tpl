@@ -34,10 +34,11 @@
 	  <option>{{linea['name']}}</option>
         % end
 	</select>
-	<!-- This is bad, i know, still learning ;) -->
+	<!-- This is bad, i know, still learning ;)
 	<input type="hidden" name="server" value={{server}}>
 	<input type="hidden" name="database" value={{database}}>
 	<input type="hidden" name="password" value={{password}}>
+	-->
 	<input type="submit" value="Go">
       </form>
     </div>

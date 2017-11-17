@@ -13,14 +13,18 @@ def login():
   password = request.forms.get('password')
   database = request.forms.get('database')
   server = request.forms.get('server')
-# Must change this###########
-#  user = 'sergio'           #
-#  password = 'usuario'      #
-#  database = 'ABD'	     #
-#  server = '172.22.200.111' #
-#############################
-# Connection
-  client = MongoClient('mongodb://'+str(user)+':'+str(password)+'@'+str(server)+':27017/'+str(database)+'', 27017)
+
+# Connection DATA
+# Working but not the best way i think, still learning
+  try:
+    conn = request.get_cookie('conn')
+    client = MongoClient(conn)
+  except:
+    conn = 'mongodb://'+str(user)+':'+str(password)+'@'+str(server)+':27017/'+str(database)+''
+    client = MongoClient(conn)
+    # Saving connection
+    response.set_cookie('conn',conn)
+
 # Select collection restaurants
   base = client.ABD.restaurants
 # Find names for first 50 documents
@@ -32,19 +36,11 @@ def login():
 @post('/consulta',method='POST')
 def consulta():
 # Request variables
-#  user = request.forms.get('user')
-#  password = request.forms.get('password')
   nombre = request.forms.get('nombre')
-#  database = request.forms.get('database')
-#  server = request.forms.get('server')
 
-# Must change this ##########
-  user = 'sergio'           #
-  password = 'usuario'      #
-  database = 'ABD'	    #
-  server = '192.168.1.132'  #
-#############################
-  client = MongoClient('mongodb://'+str(user)+':'+str(password)+'@'+str(server)+':27017/'+str(database)+'', 27017)
+# Connection DATA
+  conn = request.get_cookie('conn')
+  client = MongoClient(conn)
   base = client.ABD.restaurants
 # Find the restaurant with the nombre variable
   datos = base.find({'name':nombre})
